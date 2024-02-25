@@ -19,11 +19,11 @@ public class Main {
                 break;
             case 1:
                 System.out.print("Введіть текст: ");
-                new FileWriteService().writeToFile(Helper.BASE_URL, sc.next());
+                System.out.println(new FileWriteService().writeToFile(Helper.BASE_URL, sc.next()));
                 break;
             case 2:
                 System.out.println("\n>> Вміст файлу " + Helper.BASE_URL);
-                new FileReadService().readFromFile(Helper.BASE_URL);
+                System.out.println(new FileReadService().readFromFile(Helper.BASE_URL));
                 break;
             default:
                 System.out.println("Спробуйте ще раз...");

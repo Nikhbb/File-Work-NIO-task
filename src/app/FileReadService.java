@@ -8,21 +8,22 @@ import java.util.List;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class FileReadService {
-    public void readFromFile(String filePath) {
+    public String readFromFile(String filePath) {
+        String result = "";
         List<String> lines = null;
         try {
             lines = Files.readAllLines(Paths.get(filePath), UTF_8);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            result = e.getMessage();
         }
 
         if (lines != null) {
             for (String s : lines) {
-                System.out.println(s);
+                result = s;
             }
         } else {
-            System.out.println("Текст відсутній.");
+            result = "Текст відсутній.";
         }
-
+        return result;
     }
 }
