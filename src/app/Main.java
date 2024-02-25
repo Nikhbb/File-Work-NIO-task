@@ -11,8 +11,19 @@ public class Main {
         Helper.BASE_URL = "files/" + sc.next() + ".txt";
 
         printMenu();
-        int userNumber = sc.nextInt();
+        getResponse(sc, sc.nextInt());
+    }
 
+    private static void printMenu() {
+        System.out.print("""
+                МЕНЮ
+                0 - вихід
+                1 - створити та записати;
+                2 - читати.
+                Ваш вибір:""");
+    }
+
+    private static void getResponse(Scanner sc, int userNumber){
         switch (userNumber) {
             case 0:
                 System.out.println("See you");
@@ -28,15 +39,6 @@ public class Main {
             default:
                 System.out.println("Спробуйте ще раз...");
         }
-    }
-
-    private static void printMenu() {
-        System.out.print("""
-                МЕНЮ
-                0 - вихід
-                1 - створити та записати;
-                2 - читати.
-                Ваш вибір:""");
     }
 
 }
